@@ -11,6 +11,7 @@ Per il caricamento dei file
 - https://www.dbestech.com/tutorials/easiest-way-to-upload-image-in-laravel
 - https://www.oklaravel.com/tinymce-editor-server-side-image-upload-using-laravel-a-comprehensive-guide/
 - https://stackoverflow.com/questions/49120997/laravel-tinymce-upload-images
+- https://laracasts.com/discuss/channels/laravel/at-push-and-at-stack-in-component
 
 ## Note
 Ricordarsi di collegare lo storage `php artisan storage:link`

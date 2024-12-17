@@ -9,13 +9,22 @@ class UploadController extends Controller
 {
     public function upload(Request $request): JsonResponse {        
         $file = $request->file("file");
-        $imagePath = $file->storePubliclyAs(
-            'uploads/tinyMCE',
-            $file->getClientOriginalName(),
-            'public'
-        );
-        return response()->json([
-            'location' => asset(path: "storage/{$imagePath}"),
-        ]);
+
+        if ($file->isValid()) {
+            $imagePath = $file->storePubliclyAs(
+                'uploads/tinyMCE',
+                $file->getClientOriginalName(),
+                'public'
+            );
+    
+            return response()->json([
+                'location' => asset(path: "storage/{$imagePath}"),
+            ]);
+        } else {
+            return response()
+                ->json([
+                    "message"=> $file->getErrorMessage(),
+                ], 500);
+        }
     }
 }
