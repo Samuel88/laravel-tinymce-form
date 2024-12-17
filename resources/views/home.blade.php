@@ -7,18 +7,19 @@
     <title>TinyMCE Test</title>
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-
-    @vite('resources/js/tinyMCE.js')
+    @stack('scripts-header')
 </head>
 <body>
     <main>
         <h1>Form with TinyMCE</h1>
         <form action="">
             <div class="mb-3">
-                <label for="user-bio"></label>
-                <textarea class="tinyMce" name="user-bio" id="user-bio"></textarea>
+                <x-form.tinymce-input name="user-bio" label="Test TinyMCE Input">Ciao</x-form.tinymce-input>
+                <x-form.tinymce-input name="user-bio2" label="Test TinyMCE Input 2">Ciao2</x-form.tinymce-input>
             </div>
         </form>
     </main>
+
+    @stack('scripts-footer')
 </body>
 </html>
